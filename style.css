@@ -1,0 +1,156 @@
+*{
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+html, body{
+    height: 100%;
+}
+
+body{
+    font-size: 1.6rem;
+}
+
+header{
+    background: linear-gradient(90deg, #07c972, #359d9e);
+}
+
+header .container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 2rem 2rem;
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.nave-bar ul {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.nave-bar ul li{
+    list-style: none;
+}
+
+.nave-bar ul li > a, .logo{
+    text-decoration: none;
+    color: #f8f9f7;
+    font-size: 3rem;
+}
+
+.nave-bar ul li  a:hover{
+    opacity: .6;
+}
+
+
+/*menu responsivo*/
+
+@media(max-width:996px){
+    html{
+        font-size: 50%;
+    }
+
+    header{
+        padding: 2rem 0;
+    }
+
+    /*escondendo a lista do menu*/
+    .nave-bar{
+        display: none;
+    }
+
+
+    /*FORMANDO O MENU HAMBURGUER*/
+    .one, .two, .three{
+        background: white;
+        height: 5px;
+        width: 100%;
+        margin: 6px auto;
+
+        transition-duration: 0.3s;
+    }
+
+    /*Dando espaço para o menu aparecer*/
+    .menu-burguer{
+        width: 40px;
+        height: 30px;
+    }
+
+    /*CRIANDO A LISTA DO MENU HAMBURGUER*/
+    .menu-section.on{
+        position: absolute;
+
+        top: 0;
+        left: 0;
+
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(150deg, #07c972, #359d9e);
+
+        transition: all .3s;
+
+        /*Alinhar a lista melhor*/
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /*Add a lista do menu, no menu hamburguer*/
+    .menu-section.on .nave-bar{
+        display: block;
+    }
+
+    .menu-section.on .menu-burguer{
+        position: absolute; /*Para mover o menu burguer*/
+        right: 45px;
+        top: 35px;
+    }
+
+    /*FORMAR O X*/
+    .menu-section.on .menu-burguer .one{
+        transform: rotate(45deg) translate(7px, 7px);
+    }
+
+    .menu-section.on .menu-burguer .two{
+       opacity: 0;
+    }
+
+    .menu-section.on .menu-burguer .three{
+        transform: rotate(-45deg) translate(9px, -10px);
+    }
+
+    /*Arrumando a lista*/
+
+    .menu-section.on nav ul{
+        display: block;
+        text-align: center;
+    }
+
+    .menu-section.on nav ul li a {
+        transition-duration: 0.3s ;
+        font-size: 8rem;
+        line-height: 15rem;
+        margin-left: 0;
+    }
+
+}
+
+
+
+@media(max-width:810px){
+    html{
+        font-size: 40%;
+    }
+}
+
